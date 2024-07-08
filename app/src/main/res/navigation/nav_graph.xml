@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.TaskListFragment"
+        tools:layout="@layout/fragment_task_list">
+        <action
+            android:id="@+id/action_taskListFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment">
+            <argument
+                android:name="taskTitle"
+                app:argType="string"
+                app:nullable="true" />
+
+            <argument
+                android:name="taskDescription"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_taskListFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.TaskDetailFragment"
+        tools:layout="@layout/fragment_task_detail">
+        <argument
+            android:name="taskTitle"
+            app:argType="string" />
+        <argument
+            android:name="taskDescription"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.AddTaskFragment"
+        tools:layout="@layout/fragment_add_task">
+        <action
+            android:id="@+id/action_addTaskFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment">
+            <argument
+                android:name="taskTitle"
+                app:argType="string" />
+            <argument
+                android:name="taskDescription"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment">
+            <argument
+                android:name="profileName"
+                app:argType="string" />
+            <argument
+                android:name="profileEmail"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.CreateProfileFragment"
+        tools:layout="@layout/fragment_create_profile">
+        <action
+            android:id="@+id/action_createProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment">
+            <argument
+                android:name="profileName"
+                app:argType="string" />
+            <argument
+                android:name="profileEmail"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/musicPlayerFragment"
+        android:name="edu.msudenver.cs3013.project1_s24.MusicPlayerFragment"
+        tools:layout="@layout/fragment_music_player2" />
+</navigation>
