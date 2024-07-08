@@ -15,8 +15,6 @@ class SettingsActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-        // Enable the Up button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.settings_nav_host_fragment) as NavHostFragment

@@ -19,7 +19,7 @@ class TaskDetailFragment : Fragment() {
         val taskTitle = view.findViewById<TextView>(R.id.task_title)
         val taskDescription = view.findViewById<TextView>(R.id.task_description)
 
-        // Placeholder data
+
         taskTitle.text = arguments?.getString("taskTitle")
         taskDescription.text = arguments?.getString("taskDescription")
 

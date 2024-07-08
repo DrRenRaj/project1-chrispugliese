@@ -12,6 +12,6 @@ class TaskViewModel : ViewModel() {
 
     fun addTask(task: Task) {
         _tasks.value?.add(task)
-        _tasks.value = _tasks.value // Trigger observers
+        _tasks.value = _tasks.value
     }
 }
